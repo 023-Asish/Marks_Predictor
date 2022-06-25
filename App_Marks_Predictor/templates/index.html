@@ -1,0 +1,97 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Mark Predictor ML App</title>
+
+  <style>
+    *{
+        margin:0;
+    }
+    h1{
+        color: white;
+        margin-top: -90px;
+        font-size: xxx-large;
+        text-decoration-line: overline;
+        margin-bottom: 4%;
+    }
+    
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .asish_input{
+        width: 18%;
+        padding-left: 5%;
+        border-radius: 30px;
+        font-size:23px;
+        padding:0.5%;
+    }
+    .mybutton{
+        width: 17%;
+        padding: 1%;
+        border-radius: 26px;
+        background-color:#06fdff;
+        border: 3px solid;
+        font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Oxstandhard Univercity Banner-->
+  <div>
+    <img src="static/images/banner2.jpg" class="imageMask w3-border w3-padding" alt="Indian AI Production" style="width:100%">
+  </div>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter Your Study Hours to Predict Marks</h1>
+        
+    	<input class="asish_input" align="center" type="number" name="study_hours" placeholder="Enter study hours" required="required"/>
+    	<br>
+        
+        <br>        
+        <!-- Show button 
+        <div class="button_cont" align="center">
+        </div>-->
+            <button type="submit" class="mybutton btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button></a>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
